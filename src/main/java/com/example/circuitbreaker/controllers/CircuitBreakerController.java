@@ -27,8 +27,8 @@ public class CircuitBreakerController {
     public Response fallback(int time, Exception ex){
         log.info("Api call failed for time: " + time);
         return Response.builder()
-                .code(HttpStatus.OK.value())
-                .status(HttpStatus.OK.getReasonPhrase())
+                .code(HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .status(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase())
                 .build();
     }
 }
